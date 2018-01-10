@@ -4,7 +4,7 @@ require "crafty"
 class Cr
   include Crafty::HTML::Basic
 
-  def render(url)
+  def rendr(url)
     html do
       head do
         title "happy title"
@@ -21,5 +21,5 @@ class Cr
 end
 
 def crafty_simple(url)
-  Cr.new.render(url)
+  Cr.new.rendr(url)
 end

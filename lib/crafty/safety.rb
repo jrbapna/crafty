@@ -15,7 +15,7 @@ module Crafty
     end
 
     alias_method :to_s, :html_safe
-    alias_method :render, :html_safe
+    alias_method :rendr, :html_safe
   end
 
   class SafeWrapper
@@ -27,7 +27,7 @@ module Crafty
       @base << SafeString.new(data)
     end
 
-    def render
+    def rendr
       nil
     end
   end

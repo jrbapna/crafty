@@ -49,7 +49,7 @@ Another example:
         @target = target
       end
 
-      def render
+      def rendr
         # The first helper method that is called will collect all HTML.
         html do
           head do
@@ -57,19 +57,19 @@ Another example:
           end
           body do
             # Continue building in another method.
-            render_content
+            rendr_content
           end
         end
       end
 
-      def render_content
+      def rendr_content
         div class: ["main", "content"] do
           p "Hello, #{@target}!"
         end
       end
     end
 
-    Widget.new("world").render
+    Widget.new("world").rendr
     #=> "<html><head><title>Hello</title></head><body><div class=\"main content\"><p>Hello, world!</p></div></body></html>"
 
 
@@ -109,7 +109,7 @@ output. Observe how it works with this contrived example:
     class StreamingWidget < Array   # Subclass Array to demonstrate '<<'
       include Crafty::HTML::Basic
 
-      def render(target)
+      def rendr(target)
         html do
           head do
             title %Q(Hello "#{target}")
@@ -119,7 +119,7 @@ output. Observe how it works with this contrived example:
     end
 
     widget = StreamingWidget.new
-    widget.render("world")
+    widget.rendr("world")
     #=> nil
     widget
     #=> ["<html>", "<head>", "<title>", "Hello &quot;world&quot;", "</title>", "</head>", "</html>"]
@@ -130,7 +130,7 @@ Benchmarks
 
 Benchmarks do not necessarily give a complete picture of real-world
 performance. Nevertheless, we wish to demonstrate that Crafty is fast enough
-for daily use. These benchmarks are the result of rendering a relatively small
+for daily use. These benchmarks are the result of rendring a relatively small
 template 50000 times. They were performed on Max OS X with Ruby 1.9.2.
 
     Number of iterations = 50000

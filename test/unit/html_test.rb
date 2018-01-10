@@ -62,7 +62,7 @@ class HTMLBase < Test::Unit::TestCase
     end
 
     # Examples ===============================================================
-    test "complex nested build calls should render correctly" do
+    test "complex nested build calls should rendr correctly" do
       assert_equal %Q{<html>} +
         %Q{<head><title>my document</title><link href="style.css" rel="stylesheet" type="text/css"/></head>} +
         %Q{<body class="awesome"><div><div><table cellspacing="0">} +

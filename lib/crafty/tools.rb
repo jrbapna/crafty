@@ -116,7 +116,7 @@ module Crafty
         begin
           @_crafted = Tools.create_stream(self)
           yield
-          @_crafted.render
+          @_crafted.rendr
         ensure
           @_crafted = nil
         end
